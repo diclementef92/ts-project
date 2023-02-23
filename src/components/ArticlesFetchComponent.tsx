@@ -29,11 +29,9 @@ const ArticleFetchComponent = () => {
   return (
     <Container>
       <Row>
-        <Col>
-          {articles.map((article) => (
-            <ArticleComponent article={article} key={article.id} />
-          ))}
-        </Col>
+        {articles.map((article) => (
+          <ArticleComponent article={article} key={article.id} />
+        ))}
       </Row>
     </Container>
   );

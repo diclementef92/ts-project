@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Card } from "react-bootstrap";
+import { Card, Button, Col } from "react-bootstrap";
 import IArticle from "../interfaces/IArticle";
 
 interface ArticleProps {
@@ -12,12 +12,15 @@ const ArticleComponent = ({ article }: ArticleProps) => {
   //   }, []);
 
   return (
-    <Card>
-      <Card.Img variant="left" src={article.imageUrl} />
-      <Card.Body>
-        <Card.Text>{article.title}</Card.Text>
-      </Card.Body>
-    </Card>
+    <Col xs={12} sm={6} md={4}>
+      <Card className="m-2">
+        <Card.Img variant="top" src={article.imageUrl} />
+        <Card.Body>
+          <Card.Text>{article.title}</Card.Text>
+          <Button>Leggi</Button>
+        </Card.Body>
+      </Card>
+    </Col>
   );
 };
 

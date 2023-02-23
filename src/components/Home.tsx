@@ -3,11 +3,7 @@ import ArticleFetchComponent from "./ArticlesFetchComponent";
 
 class Home extends Component {
   render() {
-    return (
-      <div>
-        <ArticleFetchComponent />
-      </div>
-    );
+    return <ArticleFetchComponent />;
   }
 }
 export default Home;

@@ -1,11 +1,12 @@
 import { Component } from "react";
+import { Container } from "react-bootstrap";
 
 class Blog extends Component {
   render() {
     return (
-      <div>
+      <Container>
         <h2>Blog</h2>
-      </div>
+      </Container>
     );
   }
 }
