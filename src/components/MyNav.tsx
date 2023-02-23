@@ -1,35 +1,28 @@
-import { Component, ReactNode } from "react";
 import { Nav } from "react-bootstrap";
+import { Link, useLocation } from "react-router-dom";
 
-class MyNav extends Component {
-  state = {
-    selected: "/",
-  };
+const MyNav = () => {
+  const location = useLocation();
+  return (
+    <Nav variant="pills">
+      <Nav.Item>
+        <Link
+          className={`nav-link ${location.pathname} ==="/"? "active":"" `}
+          to="/"
+        >
+          Home
+        </Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Link
+          className={`nav-link ${location.pathname} ==="/blog"? "active":"" `}
+          to="/blog"
+        >
+          Blog
+        </Link>
+      </Nav.Item>
+    </Nav>
+  );
+};
 
-  handleSelect = (selectedKey: string | null) => {
-    this.setState({ selected: selectedKey });
-    console.log("selected:", this.state.selected);
-  };
-
-  render() {
-    return (
-      <Nav
-        variant="pills"
-        activeKey={this.state.selected}
-        onSelect={(s) => this.handleSelect(s)}
-      >
-        <Nav.Item>
-          <Nav.Link href="/" eventKey="/">
-            Home
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="/blog" eventKey="/blog">
-            Blog
-          </Nav.Link>
-        </Nav.Item>
-      </Nav>
-    );
-  }
-}
 export default MyNav;
